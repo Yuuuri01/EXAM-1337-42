@@ -20,7 +20,7 @@ This repository tracks my learning journey in **C programming** and related exam
 | C09    | Make File                    | Completed ✅ |
 | C10    | Advanced Topics              | Completed ✅ |
 | C11    | Modern C Features            | In Progress ⏳ |
-| C12    | Optimization & Debugging     | In Progress ⏳ |
+| C12    | Linked List     | In Progress ⏳ |
 | C13    | Projects & Applications      | In Progress ⏳ |
 
 ## 📝 Exam Progress
@@ -31,8 +31,8 @@ This repository tracks my learning journey in **C programming** and related exam
 | Level01 | Control & Functions        | Completed ✅ |
 | Level02 | Arrays & Pointers          | Completed ✅ |
 | Level03 | Strings & Structs          | Completed ✅ |
-| Level04 | File Handling & Memory     | Completed ✅ |
-| Level05 | Advanced Projects          | Completed ✅ |
+| Level04 | Advanced C_1     | Completed ✅ |
+| Level05 | Advanced C_2          | Completed ✅ |
 
 ## ⚡ Notes
 
