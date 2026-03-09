@@ -40,7 +40,7 @@ int cmp_sum(char *s1, char *s2)
 	if(w1 <= w2)
 		return -1;
 }
-//count how many string in one string
+//count words
 int count_word(const char *str)
 {
 	int index = 0;
@@ -141,6 +141,7 @@ char *orderWeight(const char *string)
 	free(tab);
 	return str;
 }
+/*
 int main()
 {
 	const char *str = "100 20 97 99 56";
@@ -152,4 +153,4 @@ int main()
 
 	free(src);
 }
-
+*/
