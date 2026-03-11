@@ -73,23 +73,6 @@ int count_words(char *str)
     }
     return w;
 }
-char *ft_strdup(char *str)
-{
-    int i = 0;
-    while(str[i])
-        i++;
-    char *tab = malloc((i + 1) * sizeof(char));
-        if(!tab)
-            exit(EXIT_FAILURE);
-    int index = 0;
-    while(str[index])
-    {
-        tab[index] = str[index];
-        index++;
-    }
-    tab[index] = '\0';
-    return tab;
-}
 int length_string(char *str)
 {
     int i = 0;
@@ -134,7 +117,7 @@ char *spliting(char *str)
         else
             i++;
     }
-    tab[index++] = ft_strdup("\\n");
+    tab[index++] = ft_own_strdup("\\n", 3);
     tab[index++] = "\n";
     tab[index] = NULL;
     int len = i + 5;
@@ -142,20 +125,24 @@ char *spliting(char *str)
 
     if(words_c > 5)
     {
-        char *copy_1 = ft_strdup(tab[1]);
-        char *copy_5 = ft_strdup(convert(tab[5]));
+        length = length_string(tab[1]);
+        char *copy_1 = ft_own_strdup(tab[1], length);
+        length = length_string(tab[5]);
+        char *copy_5 = ft_own_strdup(convert(tab[5]), length);
         i = 0;
         while(tab[i])
         {
             if(!ft_strcump(copy_1, tab[i]) == 1)
             {
                 free(tab[i]);
-                tab[i] = ft_strdup(copy_5);
+                length = length_string(copy_5);
+                tab[i] = ft_own_strdup(copy_5, length);
             }
             i++;
         }
         free(tab[5]);
-        tab[5] = ft_strdup(copy_1);
+        length = length_string(copy_1);
+        tab[5] = ft_own_strdup(copy_1, length);
         free(copy_1);
         free(copy_5);
     }
@@ -170,7 +157,8 @@ char *spliting(char *str)
         tab[i + 1] = tab[i];
         i--;
     }
-    tab[j] = ft_strdup(size);
+    length = length_string(size);
+    tab[j] = ft_own_strdup(size, length);
     free(size);
 //-----------------------------------------------------------------------|
     char *final = malloc((len + 1) * sizeof(char));
@@ -192,8 +180,8 @@ char *spliting(char *str)
     final[index] = '\0';
     return final;
 }
-/*
 # include <stdio.h>
+/*
 int main()
 {
     char str[] = "Run   go  go fast   and lO jump go   here";
