@@ -2,17 +2,6 @@
 # include <stdlib.h>
 
 
-int check_char_res(char c, char *res)
-{
-    int i = 0;
-    while(res[i])
-    {
-        if(c == res[i])
-            return 0;
-        i++;
-    }
-    return 1;
-}
 int len_of(int nb)
 {
     int size = 0;
@@ -23,14 +12,17 @@ int len_of(int nb)
     }
     return size;
 }
-int count_char(char c, char *str)
+int count_char(char c, char *str, int index)
 {
-    int i = 0;
+    int i = index;
     int con = 0;
+    int exit = 0;
     while(str[i])
     {
         if(c == str[i])
-        con++;
+            con++;
+        if(c != str[i])
+            return con;
         i++;
     }
     return con;
@@ -47,16 +39,12 @@ char *ft_compress_str(char *str)
             exit(EXIT_FAILURE);
     i = 0;
     int index = 0;
-    res[index] = '\0';
+    int val = 0;
+    int begin = 0;
     while(str[i])
     {
-        int val = count_char(str[i], str);
-
-        if(!check_char_res(str[i], res))
-        {
-            i += val;
-            continue;
-        }
+        val = count_char(str[i], str, begin);
+        begin += val;
         if(val > 9)
         {
             res[index++] = str[i];
@@ -69,24 +57,29 @@ char *ft_compress_str(char *str)
                 nb /= 10;
             }
             index += len;
-            res[index] = '\0';
         }
         else if(val <= 9)
         {
             res[index++] = str[i];
             res[index++] = val + 48;
-            res[index] = '\0';
         }
         i += val;
     }
     res[index] = '\0';
     return res;
 }
-# include <stdio.h>
-int main()
+int main(int ac, char **av)
 {
-    char *res = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavvaaaaaaaaabbbbbccccccccccckkkkbkkkkkkaaaaaaaaaaa";
-    char *str = ft_compress_str(res);
-    printf("%s\n", str);
-    free(str);
+    if(ac == 2)
+    {
+        char *res = ft_compress_str(av[1]);
+        int i = 0;
+        while(res[i])
+            i++;
+        
+        write(1, res, i);
+        free(res);
+    }
+    write(1, "\n", 1);
+    exit(EXIT_SUCCESS);
 }
