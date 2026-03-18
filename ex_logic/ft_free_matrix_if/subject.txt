@@ -1,0 +1,6 @@
+Exercise 08: ft_free_matrix_if
+Turn-in directory: ex08/
+Files to turn in: ft_free_matrix_if.c
+Allowed functions: free
+Description: Write a function that takes a dynamically allocated, NULL-terminated array of strings. The function must iterate through it and use free() ONLY on strings that start with a vowel (A, E, I, O, U, a, e, i, o, u). It must then shift the remaining strings to the front to fill the gaps, and properly NULL-terminate the array again.
+Prototype: void ft_free_matrix_if(char **strs);
