@@ -1,3 +1,4 @@
+# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -73,32 +74,31 @@ void ft_free_matrix_if(char **strs)
     }
     free(strs);
 }
-/*
+
 int main()
 {
     //---array of pointers-----//
-    //char *str[7];
+    char *str[7];
 
     //---pointer to pointer-----//
-    char **str = malloc((6 + 1) * sizeof(char*));
-    if(!str)
-        exit(EXIT_FAILURE);
-    str[0] = ft_strdup("hello");
-    str[1] = ft_strdup("alc");
-    str[2] = ft_strdup("Christopher");
-    str[3] = ft_strdup("konstantinos");
-    str[4] = ft_strdup("carthage");
-    str[5] = ft_strdup("All");
-    str[6] = NULL;
+    //char **str = malloc((6 + 1) * sizeof(char*));
+    //if(!str)
+    //    exit(EXIT_FAILURE);
+    // str[0] = ft_strdup("hello");
+    // str[1] = ft_strdup("alc");
+    // str[2] = ft_strdup("Christopher");
+    // str[3] = ft_strdup("konstantinos");
+    // str[4] = ft_strdup("carthage");
+    // str[5] = ft_strdup("All");
+    // str[6] = NULL;
     
     int i = 0;
     printf("----------WORDS-------------\n");
     while(str[i])
     {
-        printf("%s\n", str[i++]);
+        printf("%c", str[i]);
     }
-    printf("----AFTER-REMOVING-WORDS------\n");
-    ft_free_matrix_if(str);
-    printf("-------------------------------\n");
+    // printf("----AFTER-REMOVING-WORDS------\n");
+    // ft_free_matrix_if(str);
+    // printf("-------------------------------\n");
 }
-*/

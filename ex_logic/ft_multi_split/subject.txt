@@ -1,0 +1,10 @@
+Exercise 09: ft_multi_split
+Turn-in directory: ex09/
+
+
+
+Files to turn in: ft_multi_split.c
+Allowed functions: malloc, free
+Description: Write a function that acts like ft_split, but instead of splitting by a single character or a charset of characters, it splits the string using an array of delimiter strings. Return a dynamically allocated NULL-terminated array of words.
+
+Prototype: char **ft_multi_split(char *str, char **delimiters);
