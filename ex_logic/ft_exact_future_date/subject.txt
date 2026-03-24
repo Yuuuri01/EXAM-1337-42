@@ -1,0 +1,23 @@
+Exercise: ft_exact_future_date
+Files to turn in: ft_exact_future_date.c
+Allowed functions: malloc, free
+
+Description:
+Write a function that calculates the exact future date after adding a specific number of days to a given starting date.
+The function must return a dynamically allocated string in the format: DD/MM/Y... (The year digits must expand dynamically to safely accommodate massive future years, e.g., DD/MM/10213).
+If the initial date is invalid, return NULL.
+
+------------------------------
+Moulinette Strict Constraints:
+
+Performance:
+Execution time must be strictly under 0.05 seconds. Day-by-day iteration loops (O(N)) will result in a Time Limit Exceeded (TLE) and a grade of 0.
+
+Extreme Jumps:
+The days_to_add parameter can reach 100 billion. The algorithm must use mathematical optimization to process these jumps instantaneously.
+
+Calendar Accuracy:
+The code must flawlessly compute Leap Years and exact month lengths across centuries.
+
+Prototype:
+char	*ft_exact_future_date(int day, int month, int year, long long days_to_add);
