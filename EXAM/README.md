@@ -1,5 +1,9 @@
 # C-Piscine-exam | Exam Shell
 
+<p align="center">
+  <img src="https://github.com/ASTR-dafiicult/GITHUB_action/blob/main/github/images/fullmetal%20alchemist%20GIF.gif" alt="Learning C GIF" width="600"/>
+</p>
+
 Get ready for your 1337/42 exams
 
 # Your mission
