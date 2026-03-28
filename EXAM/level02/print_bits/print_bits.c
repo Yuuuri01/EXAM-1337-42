@@ -6,7 +6,7 @@ void	print_bits(unsigned char octet)
     // unsigned char size = 1byte(8 bits) (0 - 255) ---> 256(overflow)
     // 2 ---->  0 0 0 0 0 0 1 0
     // i = 128 octet >= 0 i == true
-    // octet / i == true? ----> write(1) cotet -= i : write(0) i /= 2 [64 32 16 8 4 2 1]
+    // octet / i == true? ----> write(1) octet -= i : write(0) i /= 2 [64 32 16 8 4 2 1]
 
     int i = 128;
     while(octet >= 0 && i) // octet = 42 // 0 0 1 0 1 0 1 0
