@@ -31,7 +31,6 @@ void    biggest_pal(char *str, int *len)
         i++;
     }
     int index = 0;
-    char *res = malloc((max + 1) * sizeof(char));
     while(index < max)
     {
         write(1, &str[from + index], 1);
