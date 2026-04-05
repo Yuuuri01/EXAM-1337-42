@@ -1,0 +1,11 @@
+Problem Statement:
+Given an array height representing an elevation map where the width of each bar is 1, compute how much water can be trapped after raining.
+
+Intuition:
+Water trapped at index i depends on the highest bar to the left and highest bar to the right of i.
+
+Water trapped = min(maxLeft, maxRight) - height[i]
+If negative or zero, no water trapped at i.
+
+
+prototype : int catch_the_drops(int *heights, int size);
