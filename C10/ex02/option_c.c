@@ -11,8 +11,9 @@ void handle_option(char *file, char *program, char *av2, int *valid)
     }
     int bytes;
     int start;
+    int size;
     int total;
-    unsigned char buff[30000];
+    char *buff;
     int fd;
 
     fd = open(file, O_RDONLY);
@@ -27,9 +28,21 @@ void handle_option(char *file, char *program, char *av2, int *valid)
         return;
     }
     total = 0;
+    size = 300000;
+    buff = malloc(size);
+    if(!buff)
+        return;
     while((bytes = read(fd, buff + total, 1)) > 0)
-        total++;
-
+    {
+        total += bytes;
+        if(total >= size)
+        {
+            size *= 2;
+            buff = malloc(size);
+            if(!buff)
+                return;
+        }
+    }
     start = total - n_bytes;
     if(start < 0)
     {
@@ -37,5 +50,6 @@ void handle_option(char *file, char *program, char *av2, int *valid)
         n_bytes = total;
     }
     write(1, buff + start, n_bytes);
-
+    free(buff);
+    close(fd);
 }
