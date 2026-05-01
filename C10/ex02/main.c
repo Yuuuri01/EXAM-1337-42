@@ -63,7 +63,6 @@ int main(int ac, char **av)
     }
     else if(ac >= 2)
     {
-        write(1, "ll", 1);
         if(av[1][0] == '-')
         {
             ft_putstr(av[0]);
