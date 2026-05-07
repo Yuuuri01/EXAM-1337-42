@@ -4,8 +4,7 @@
 int get_len(char *str)
 {
     int i;
-    int j;
-    int len;
+	int len;
     int one_dot;
     
     one_dot = 1;
