@@ -1,0 +1,27 @@
+EX : Write a function that takes a string and returns a newly allocated string
+containing only decimal digits and at most one dot '.'.
+
+A dot is kept only if at least one digit has already been kept.
+All other characters must be ignored.
+
+The returned string must be null-terminated.
+
+Prototype:
+
+char    *sanitize_decimal(char *conststr);
+
+Examples:
+
+$> ./a.out "abc12.3def" | cat -e
+12.3$
+$> ./a.out "..1a2b.3c" | cat -e
+12.3$
+$> ./a.out "12..34" | cat -e
+12.34$
+$> ./a.out "abc" | cat -e
+$
+$> ./a.out ".5" | cat -e
+5$
+$> ./a.out "1.2.3.4" | cat -e
+1.234$
+$>
