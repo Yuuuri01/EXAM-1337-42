@@ -21,7 +21,7 @@ This repository tracks my learning journey in **C programming** and related exam
 | C10    | Advanced Topics              | Completed ✅ |
 | C11    | Modern C Features            | Completed ✅ |
 | C12    | Linked List     | In Progress ⏳ |
-| C13    | Projects & Applications      | In Progress ⏳ |
+| C13    |  binary tree      | In Progress ⏳ |
 
 ## 📝 Exam Progress
 
