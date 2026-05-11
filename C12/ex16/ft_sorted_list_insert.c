@@ -25,6 +25,7 @@ void ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
     if(!*begin_list)
     {
         new = ft_create_elem(data);
+        if(!new) return;
         new->next = *begin_list;
         *begin_list = new;
         return;
@@ -33,6 +34,7 @@ void ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
     if(cmp(data, curr->data) < 0)
     {
         new = ft_create_elem(data);
+        if(!new) return;
         new->next = curr;
         *begin_list = new;
         return;
@@ -44,6 +46,7 @@ void ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
         if(cmp(curr->data, data) > 0)
         {
             new = ft_create_elem(data);
+            if(!new) return;
             prev->next = new;
             new->next = curr;
             return;
@@ -51,6 +54,7 @@ void ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
         else if(!curr->next && cmp(data, curr->data) > 0)
         {
             new = ft_create_elem(data);
+            if(!new) return;
             curr->next = new;
             return;
         }
