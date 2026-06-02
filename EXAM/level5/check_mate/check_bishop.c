@@ -1,6 +1,3 @@
-# include <stdio.h>
-
-
 int check_bishop(char **av, int row, int col)
 {
     int j;
