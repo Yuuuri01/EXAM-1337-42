@@ -1,37 +1,27 @@
 # include <unistd.h>
 # include "head.h"
 
-
 int main(int ac, char **av)
 {
     if(ac >= 2)
     {
-        int i = 1;
+        char **board = av + 1;
+        int i = 0;
         int j;
         int access = 0;
-        while(av[i])
+        while(board[i])
         {
             j = 0;
-            while(av[i][j])
+            while(board[i][j])
             {
-                if(av[i][j] == 'R')
-                {
-                    if(check_rock(av, i, j))
-                        access = 1;
-                }
-                else if(av[i][j] == 'B')
-                {
-                    if(check_bishop(av, i , j))
-                        access = 1;
-                }
-                else if(av[i][j] == 'P')
-                {
-                    if(check_pawn(av, i, j))
-                        access = 1;
-                }
-                else if(av[i][j] == 'Q')
-                    if(check_queen(av, i, j))
-                        access = 1;
+                if(board[i][j] == 'R')
+                    access = check_rock(board, i, j);
+                else if(board[i][j] == 'B')
+                    access = check_bishop(board, i , j);
+                else if(board[i][j] == 'P')
+                    access = check_pawn(board, i, j);
+                else if(board[i][j] == 'Q')
+                    access = check_queen(board, i, j);
                 if(access)
                 {
                     write(1, "Success\n", 8);
