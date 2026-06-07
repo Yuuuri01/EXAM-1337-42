@@ -1,5 +1,5 @@
 # include <unistd.h>
-# include <stdlib.h>
+
 
 
 void	print_bits(unsigned char octet)
