@@ -20,7 +20,7 @@ This repository tracks my learning journey in **C programming** and related exam
 | C09    | Make File                    | Completed ✅ |
 | C10    | Advanced Topics              | Completed ✅ |
 | C11    | Modern C Features            | Completed ✅ |
-| C12    | Linked List     | In Progress ⏳ |
+| C12    | Linked List     | Completed ✅ |
 | C13    |  binary tree      | In Progress ⏳ |
 
 ## 📝 Exam Progress
